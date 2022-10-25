@@ -1,0 +1,53 @@
+{
+  "destinatarios": [
+    {
+      "id": 1,
+      "ci": "6559595",
+      "nombreCompleto": "Diego Perales",
+      "celular": "72290029",
+      "direccion": "Calle Heroinas #100",
+      "ciudad": "Cochabamba"
+    },
+    {
+      "id": 2,
+      "ci": "4562784",
+      "nombreCompleto": "Franz Panozo",
+      "celular": "68022223",
+      "direccion": "Avenida Ayacucho #4567",
+      "ciudad": "La Paz"
+    },
+    {
+      "ci": "12345678",
+      "nombreCompleto": "Florentino Perez",
+      "celular": "70756189",
+      "direccion": "Calle Micahel Faraday #541",
+      "ciudad": "Santa Cruz",
+      "tipo": "Mirian Lizarazu",
+      "id": 3
+    }
+  ],
+  "encomiendas": [
+    {
+      "id": "1",
+      "codigo": "1234",
+      "tipo": "Paquete",
+      "precio": 30.5,
+      "destinatarioId": 1
+    },
+    {
+      "id": "2",
+      "codigo": "4321",
+      "tipo": "Sobre",
+      "precio": 10.5,
+      "destinatarioId": 2
+    },
+    {
+      "codigo": "7894",
+      "tipo": "Sobre",
+      "precio": "89",
+      "destinatarioId": "1",
+      "nombreCompleto": "Caja",
+      "id": "3-U72Yp"
+    }
+  ]
+}
