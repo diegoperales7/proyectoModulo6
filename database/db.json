@@ -22,11 +22,10 @@
       "celular": "70756189",
       "direccion": "Calle Micahel Faraday #541",
       "ciudad": "Santa Cruz",
-      "tipo": "Mirian Lizarazu",
       "id": 3
     },
     {
-      "ci": "7895147",
+      "ci": "7895148",
       "nombreCompleto": "Michael Zapata",
       "celular": "60489045",
       "direccion": "Av Circunvalacion #5498",
@@ -40,6 +39,7 @@
       "codigo": "1154",
       "tipo": "Paquete",
       "precio": 30.5,
+      "entregado": "true",
       "destinatarioId": 1
     },
     {
@@ -47,22 +47,24 @@
       "codigo": "4321",
       "tipo": "Sobre",
       "precio": 10.5,
+      "entregado": false,
       "destinatarioId": 2
     },
     {
       "codigo": "7894",
       "tipo": "Sobre",
       "precio": "89",
+      "entregado": "true",
       "destinatarioId": "4",
-      "nombreCompleto": "Caja",
-      "id": "3-U72Yp"
+      "id": 3
     },
     {
       "codigo": "8778",
       "tipo": "Paquete",
       "precio": "56",
+      "entregado": "false",
       "destinatarioId": "3",
-      "id": "D22ScgR"
+      "id": 4
     }
   ]
 }

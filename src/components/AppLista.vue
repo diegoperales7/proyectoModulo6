@@ -17,9 +17,8 @@
 
     <div class="form-check form-switch alin">
             <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                :checked="$store.state.soloTerminado" v-on:input="$store.state.soloTerminado = $event.target.checked">
-            <label class="form-check-label" for="flexSwitchCheckChecked">Mostrar solo Sobres
-                {{$store.state.soloTerminado}}</label>
+                :checked="$store.state.soloEntregados" v-on:input="$store.state.soloEntregados = $event.target.checked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Mostrar solo Entregados: {{$store.state.soloEntregados}}</label>
         </div>
 <table class="table">
   <thead class="thead-dark">
@@ -27,16 +26,18 @@
       <th scope="col">Codigo</th>
       <th scope="col">Tipo</th>
       <th scope="col">Precio (Bs)</th>
+      <th scope="col">Entregado</th>
       <th scope="col">Destinatario</th>
       <th scope="col"></th>    
       <th scope="col"></th>    
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(value,index) in encomiendas">
+    <tr v-for="(value) in lista">
       <th >{{value.codigo}}</th>
       <td>{{value.tipo}}</td>
       <td>{{value.precio}}</td>
+      <td>{{value.entregado}}</td>
       <td>{{value.destinatarioId}}</td>
       <td><button type="button" class="btn btn-primary" @click="irAEncomienda('editar',value.id)">Editar</button></td>
       <td><button type="button" class="btn btn-danger" @click="irAEncomienda('eliminar',value.id)">Eliminar</button></td>
@@ -54,12 +55,7 @@
     
         </div>
     </form>
-    <div class="form-check form-switch alin">
-            <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                :checked="$store.state.soloTerminado" v-on:input="$store.state.soloTerminado = $event.target.checked">
-            <label class="form-check-label" for="flexSwitchCheckChecked">Mostrar solo ciudad Cochabamba
-                {{$store.state.soloTerminado}}</label>
-        </div>
+    
 <table class="table">
   <thead class="thead-light">
     <tr>
@@ -101,6 +97,7 @@
                     codigo:null,
                     tipo:null,
                     precio:null,
+                    entregado:null,
                     destinatarioId:null
                 },
                 encomiendas:{
@@ -197,6 +194,14 @@
             
         },
         computed:{
+            lista(){
+                if(this.$store.state.soloEntregados){
+                    return this.encomiendas.filter(item=>{
+                        return item.entregado=="true";
+                    });
+                }
+                return this.encomiendas;
+            }
             
         },
         mounted(){

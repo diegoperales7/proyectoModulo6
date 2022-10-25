@@ -35,6 +35,7 @@
                     codigo:null,
                     tipo:null,
                     precio:null,
+                    entregado:"false",
                     destinatarioId:null
                 },
                 encomiendas:{

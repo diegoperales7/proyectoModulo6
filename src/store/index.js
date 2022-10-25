@@ -2,6 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    soloCochabamba:false,
+    soloEntregados:false,
     delMensajeIndex:null,
     mensajes:[],
     mensaje:{

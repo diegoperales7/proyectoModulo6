@@ -10,7 +10,13 @@
     <label for="inputTipo">Tipo:</label>
     <input type="text" v-model="encomienda.tipo" class="form-control" >
     <label for="inputPrecio">Precio:</label>
-    <input type="text" v-model="encomienda.precio" class="form-control"  >
+    <input type="text" v-model="encomienda.precio" class="form-control" >
+    <label for="inputPrecio" >Entregado:</label>
+    <select name="select" v-model=encomienda.entregado  class="form-control">
+        <option class="form-control" value=false  selected>False</option>
+        <option class="form-control" value=true>True</option>
+        
+    </select>
     <label for="inputDestinatario">Destinatario:</label>
     <input type="text" v-model="encomienda.destinatarioId" class="form-control"  >
     <button type="submit" class="btn btn-primary m-2 ">Guardar</button>
@@ -31,6 +37,7 @@
                     codigo:null,
                     tipo:null,
                     precio:null,
+                    entregado:null,
                     destinatarioId:null
                 },
                 encomiendas:{
