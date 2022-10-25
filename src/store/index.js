@@ -10,6 +10,9 @@ export default createStore({
     }
   },
   getters: {
+    getMensajes(state){
+      return state.mensajes;
+    }
   },
   mutations: {
     addMensaje(state){

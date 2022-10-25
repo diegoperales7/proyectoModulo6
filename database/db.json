@@ -24,12 +24,20 @@
       "ciudad": "Santa Cruz",
       "tipo": "Mirian Lizarazu",
       "id": 3
+    },
+    {
+      "ci": "7895147",
+      "nombreCompleto": "Michael Zapata",
+      "celular": "60489045",
+      "direccion": "Av Circunvalacion #5498",
+      "ciudad": "Cochabamba",
+      "id": 4
     }
   ],
   "encomiendas": [
     {
       "id": "1",
-      "codigo": "1234",
+      "codigo": "1154",
       "tipo": "Paquete",
       "precio": 30.5,
       "destinatarioId": 1
@@ -45,9 +53,16 @@
       "codigo": "7894",
       "tipo": "Sobre",
       "precio": "89",
-      "destinatarioId": "1",
+      "destinatarioId": "4",
       "nombreCompleto": "Caja",
       "id": "3-U72Yp"
+    },
+    {
+      "codigo": "8778",
+      "tipo": "Paquete",
+      "precio": "56",
+      "destinatarioId": "3",
+      "id": "D22ScgR"
     }
   ]
 }

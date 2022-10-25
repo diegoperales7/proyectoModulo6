@@ -1,8 +1,26 @@
 <template>
     <br>
-<h2>Encomiendas</h2>
+
+
+
+<h2> Lista Encomiendas</h2>
+
 
 <div class="container">
+    <form action="">
+        <div class="input-group">
+            <input type="text" v-model="textoABuscarEncomienda" class="form-control"  placeholder="Buscar encomienda">
+            <button class="btn btn-outline-secondary" @click.prevent="getEncomiendas()">Buscar</button>
+    
+        </div>
+    </form>
+
+    <div class="form-check form-switch alin">
+            <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                :checked="$store.state.soloTerminado" v-on:input="$store.state.soloTerminado = $event.target.checked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Mostrar solo Sobres
+                {{$store.state.soloTerminado}}</label>
+        </div>
 <table class="table">
   <thead class="thead-dark">
     <tr >
@@ -28,7 +46,20 @@
   </tbody>
 </table>
 <br>
-<h2>Destinatarios</h2>
+<h2>Lista Destinatarios</h2>
+<form action="">
+        <div class="input-group">
+            <input type="text" v-model="textoABuscarDestinatario" class="form-control" placeholder="Buscar Destinatarios">
+            <button class="btn btn-outline-secondary" @click.prevent="getDestinatarios()">Buscar</button>
+    
+        </div>
+    </form>
+    <div class="form-check form-switch alin">
+            <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                :checked="$store.state.soloTerminado" v-on:input="$store.state.soloTerminado = $event.target.checked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Mostrar solo ciudad Cochabamba
+                {{$store.state.soloTerminado}}</label>
+        </div>
 <table class="table">
   <thead class="thead-light">
     <tr>
@@ -59,10 +90,13 @@
 </template>
 
 <script>
+
     export default{
         name: 'appLista',
         data(){
             return {
+                textoABuscarDestinatario:'',
+                textoABuscarEncomienda:'',
                 encomienda:{
                     codigo:null,
                     tipo:null,
@@ -90,7 +124,7 @@
                 axios
                 ({
                     method: "get",
-                    url: "http://localhost:3333/encomiendas/"
+                    url: "http://localhost:3333/encomiendas/?q="+this.textoABuscarEncomienda
                 })
                 .then(response => {
                     this.encomiendas=response.data;
@@ -102,7 +136,7 @@
                 axios
                 ({
                     method: "get",
-                    url: "http://localhost:3333/destinatarios/"
+                    url: "http://localhost:3333/destinatarios/?q="+this.textoABuscarDestinatario
                 })
                 .then(response => {
                     this.destinatarios=response.data;
@@ -170,10 +204,13 @@
             this.getDestinatarios()
         },
         components:{
+            
         }
     }
 </script>
 
 <style>
-
+.alin{
+    text-align: left;
+}
 </style>

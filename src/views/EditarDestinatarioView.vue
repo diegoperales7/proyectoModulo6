@@ -1,7 +1,7 @@
 <template>
     <div class="container">
 
-<h2>Registro de Destinatarios</h2>
+<h2>Editar Destinatarios</h2>
 <form @submit.prevent="guardar()">
 <div class="form-group alin">
 <label for="inputci">CI:</label>
@@ -86,5 +86,7 @@
 </script>
 
 <style>
-
+.alin{
+    text-align: left;
+}
 </style>
